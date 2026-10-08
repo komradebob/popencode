@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Popencode launcher script
+
+POPENCODE_DIR="$HOME/src/popencode"
+
+case "${1:-}" in
+    start)
+        cd "$POPENCODE_DIR"
+        python3 launch.py "${@:2}"
+        ;;
+    setup)
+        cd "$POPENCODE_DIR"
+        python3 setup_openrouter.py
+        ;;
+    test-ssh)
+        cd "$POPENCODE_DIR"
+        python3 launch.py --test-ssh --no-cleanup
+        ;;
+    config)
+        ${EDITOR:-vim} "$POPENCODE_DIR/machines.json"
+        ;;
+    models)
+        cat "$POPENCODE_DIR/models/free_models.json" | python3 -m json.tool
+        ;;
+    clean)
+        rm -rf "$POPENCODE_DIR/queue" "$POPENCODE_DIR/processing" "$POPENCODE_DIR/results" "$POPENCODE_DIR/status" "$POPENCODE_DIR/locks"
+        mkdir -p "$POPENCODE_DIR/queue" "$POPENCODE_DIR/processing" "$POPENCODE_DIR/results" "$POPENCODE_DIR/status" "$POPENCODE_DIR/locks"
+        echo "Cleaned coordination directories"
+        ;;
+    *)
+        echo "Usage: popencode {start|setup|test-ssh|config|models|clean}"
+        echo ""
+        echo "Commands:"
+        echo "  start      - Launch the distributed supervisor"
+        echo "  setup      - Configure OpenRouter API credentials"
+        echo "  test-ssh   - Test SSH connections to configured machines"
+        echo "  config     - Edit machines.json in \$EDITOR"
+        echo "  models     - List available free models"
+        echo "  clean      - Clean coordination directories"
+        exit 1
+        ;;
+esac

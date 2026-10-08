@@ -1,0 +1,12 @@
+{
+  "machines": [
+    {
+      "name": "local",
+      "host": "localhost",
+      "shared_fs": true,
+      "coord_mount": "/tmp/opencode-coord",
+      "max_workers": 3,
+      "use_tunnel": false
+    }
+  ]
+}

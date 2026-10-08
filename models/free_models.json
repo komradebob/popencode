@@ -1,0 +1,20 @@
+{
+  "models": [
+    {"name": "meta-llama/llama-3.1-405b-instruct", "provider": "openrouter", "context": 128000, "free": true},
+    {"name": "meta-llama/llama-3.1-70b-instruct", "provider": "openrouter", "context": 128000, "free": true},
+    {"name": "meta-llama/llama-3.1-8b-instruct", "provider": "openrouter", "context": 128000, "free": true},
+    {"name": "mistralai/mistral-nemo", "provider": "openrouter", "context": 128000, "free": true},
+    {"name": "google/gemma-2-27b-it", "provider": "openrouter", "context": 8192, "free": true},
+    {"name": "google/gemma-2-9b-it", "provider": "openrouter", "context": 8192, "free": true},
+    {"name": "qwen/qwen-2.5-72b-instruct", "provider": "openrouter", "context": 32768, "free": true},
+    {"name": "qwen/qwen-2.5-32b-instruct", "provider": "openrouter", "context": 32768, "free": true},
+    {"name": "qwen/qwen-2.5-14b-instruct", "provider": "openrouter", "context": 32768, "free": true},
+    {"name": "qwen/qwen-2.5-7b-instruct", "provider": "openrouter", "context": 32768, "free": true},
+    {"name": "microsoft/phi-3.5-mini-instruct", "provider": "openrouter", "context": 128000, "free": true},
+    {"name": "microsoft/phi-3.5-moe-instruct", "provider": "openrouter", "context": 128000, "free": true},
+    {"name": "nousresearch/hermes-3-llama-3.1-405b", "provider": "openrouter", "context": 128000, "free": true},
+    {"name": "nousresearch/hermes-3-llama-3.1-70b", "provider": "openrouter", "context": 128000, "free": true},
+    {"name": "nousresearch/hermes-3-llama-3.1-8b", "provider": "openrouter", "context": 128000, "free": true}
+  ],
+  "token_warning_threshold": 0.9
+}
